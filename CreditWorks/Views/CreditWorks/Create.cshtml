@@ -1,0 +1,77 @@
+﻿@model CreditWorksAssignment.Models.CreditWorks
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>CreditWorks</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Manufacturer" class="control-label"></label>
+                @{
+                    List<SelectListItem> listItems = new List<SelectListItem>();
+                    listItems.Add(new SelectListItem
+                    {
+                        Text = "Mazda",
+                        Value = "Mazda"
+                    });
+                    listItems.Add(new SelectListItem
+                    {
+                        Text = "Mercedes",
+                        Value = "Mercedes",
+                        Selected = true
+                    });
+                    listItems.Add(new SelectListItem
+                    {
+                        Text = "Honda",
+                        Value = "Honda"
+                    });
+                    listItems.Add(new SelectListItem
+                    {
+                        Text = "Ferrari",
+                        Value = "Ferrari"
+                    });
+                    listItems.Add(new SelectListItem
+                    {
+                        Text = "Toyota",
+                        Value = "Toyota"
+                    });
+                }
+
+                @Html.DropDownListFor(model => model.Manufacturer, listItems, "-- Select Manufacturer --")
+            </div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Weight" class="control-label"></label>
+                <input asp-for="Weight" class="form-control" />
+                <span asp-validation-for="Weight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
