@@ -6,3 +6,4 @@ Connection String:@"Server=.\\;Database=CreditWorks;Trusted_Connection=True;Conn
 
 ![Test](https://github.com/mosesnova/CreditWorksAssignment/blob/main/Credit.JPG)
 ![Test](https://github.com/mosesnova/CreditWorksAssignment/blob/main/Repository.jpg)
+![Test](https://github.com/mosesnova/CreditWorksAssignment/blob/main/pipe.jpg)
